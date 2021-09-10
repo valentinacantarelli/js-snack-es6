@@ -27,14 +27,24 @@ const squadre=[
     },
 ];
 
-const random=(min,max)=>Math.floor(Math.random()*(max-min+1))+min;
-let puntiFatti=random(1,20);
-let falliSubiti=random(1,40);
+const random=(min,max)=>Math.floor(Math.random() * (max - min + 1) ) + min;
+// let puntiFatti=random(1,20);
+// let falliSubiti=random(1,40);
 
 
-for(var i=0;i<squadre;i++){
-     squadre[i].push(puntiFatti);
-     squadre[i].push(falliSubiti);
-} 
- console.log(squadre);
+for(var i=0;i<squadre.length;i++){
+    squadre[i].puntiFatti=random(1,20);
+    squadre[i].falliSubiti=random(1,40);
+}
+     
+const squadreeFallisubiti=[];
+for(var i=0;i<squadre.length;i++){
+    const{nome,falliSubiti}=squadre[i];
+    const nuovoOggettoSquadre={
+        nome,
+        falliSubiti
+    };
+    squadreeFallisubiti.push(nuovoOggettoSquadre);
+}
  
+console.log(squadreeFallisubiti);
