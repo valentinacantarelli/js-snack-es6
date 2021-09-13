@@ -7,12 +7,19 @@ const a=parseInt(prompt("inserisci un numero tra 1 e 5"));
 const b=parseInt(prompt("inserisci un numero tra 6 e 12"));
 
 
-const mesiSezione=mesi.filter((mese,indice)=>{
-    if(indice>=a && indice<=b){
-        return true;
-    }
-    return false;
-}
-);
 
-console.log(mesiSezione);
+
+ const sezione=(arr,a,b)=>{
+     const arrTemp=[];
+     arr.forEach(
+         (elemento,indice)=>{
+            if(indice>=a && indice<=b){
+            arrTemp.push(elemento);
+            }
+        }
+    );    
+     return arrTemp;
+}
+
+const sezioneMesi=sezione(mesi,a,b);
+console.log(sezioneMesi);
